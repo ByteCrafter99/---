@@ -1,0 +1,29 @@
+/*Password generator
+*/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <limits>
+using namespace std;
+
+void get(int& getPass, int& getRange){
+  srand(time(0));                                     // Seeding values
+  cout << "******Numeric Password generator*****";  // Welcome-Prompt 
+  cout << "\nHow many no. of password you want: ";
+  cin >> getPass;
+  cout << "Set-Range: " ;
+  cin >> getRange;
+  while(getRange != 60000) {
+  cout << "Try again: ";
+  cin >> getRange;
+  cin.clear();
+  fflush(stdin);
+} 
+ for(int index = 1; index <= getPass; index ++){
+ cout << rand() % getRange << '\n';
+ } 
+}
+int main(){
+ int getPass, getRange;
+ get(getPass, getRange);
+}
